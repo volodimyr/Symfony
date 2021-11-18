@@ -8,6 +8,7 @@
 5. Use Services and domain layer to inject any repo's and therefore to combine/write the business logic you need.
 6. Linter out of the box `make lint`.
 7. Migration out of the box. Just add another version within migration package and re-run the service to commit your changes. 
+8. Security is applicable.
 
 #### Before you create a PR, run 
 `make pr`
