@@ -1,0 +1,48 @@
+version: "3.8"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    env_file:
+      - .env
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    depends_on:
+      - database
+      - redis
+    networks:
+      - backend
+
+  database:
+    image: postgres:14.1
+    env_file:
+      - .env
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  redis:
+    image: redis:6.2.6
+    env_file:
+      - .env
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+    volumes:
+      - redis-data:/var/lib/redis/data
+    networks:
+      - backend
+
+
+networks:
+  backend:
+
+volumes:
+  db-data:
+    external: false
+  redis-data:
+    external: false

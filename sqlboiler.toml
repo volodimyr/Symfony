@@ -1,0 +1,11 @@
+no-tests = true
+
+[psql]
+schema = "public"
+dbname = "symphony-rent"
+host = "localhost"
+port = 5432
+user = "postgres"
+pass = "postgres"
+sslmode = "disable"
+blacklist = ["goose_db_version"]

@@ -1,0 +1,50 @@
+linters-settings:
+  goimports:
+    local-prefixies: Symfony
+
+output:
+  format: tab
+
+run:
+  skip-dirs:
+    - target
+
+
+linters:
+  enable:
+    - misspell
+    - deadcode
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unused
+    - varcheck
+    - unconvert
+    - megacheck
+    - gas
+    - dupl
+    - bodyclose
+    - gosec
+    - goconst
+    - gofmt
+    - goimports
+    - prealloc
+    - gocritic
+    - goprintffuncname
+    - rowserrcheck
+    - stylecheck
+    - gocyclo
+    - gomnd
+    - nestif
+    - gocognit
+    - asciicheck
+    - whitespace
+    - testpackage
+    - nestif
+    - exhaustive
+    - nlreturn
+    - nolintlint
